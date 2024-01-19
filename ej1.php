@@ -4,14 +4,14 @@ Definir un método initialize que reciba como parámetros el nombre y sueldo.
 Plantear un segundo método print que imprima el nombre y un mensaje si debe pagar o no impuestos
 (si el sueldo supera 6000, paga impuestos).*/
 
+$empleado = new Employee("Juan Pérez", 7000);
+$empleado->printInfo();
 class Employee
 {
-    // Atributos
     private $nombre;
     private $sueldo;
 
-    // Método para inicializar los atributos
-    public function initialize($nombre, $sueldo)
+    public function __construct($nombre, $sueldo)
     {
         $this->nombre = $nombre;
         $this->sueldo = $sueldo;
@@ -19,23 +19,13 @@ class Employee
 
     public function printInfo()
     {
-        echo "Nombre: $this->nombre<br>";
-        echo "Sueldo: $this->sueldo<br>";
+        echo "Nombre: $this->nombre" . PHP_EOL;
+        echo "Sueldo: $this->sueldo" . PHP_EOL;
 
         if ($this->sueldo > 6000) {
-            echo "Debe pagar impuestos.<br>";
+            echo "Debe pagar impuestos" . PHP_EOL;
         } else {
-            echo "No debe pagar impuestos.<br>";
+            echo "No debe pagar impuestos" . PHP_EOL;
         }
     }
 }
-
-// Crear un objeto Employee
-$empleado = new Employee();
-
-// Inicializar el objeto con nombre y sueldo
-$empleado->initialize("Juan Pérez", 7000);
-
-// Imprimir la información del empleado
-$empleado->printInfo();
-?>
