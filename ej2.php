@@ -33,6 +33,10 @@ class Triangulo extends Shape
     {
         parent::__construct($ancho, $alto);
     }
+    public function calcularArea()
+    {
+        return ($this->ancho * $this->alto) / 2;
+    }
 }
 
 class Rectangulo extends Shape
